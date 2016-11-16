@@ -10,7 +10,7 @@ import com.zrgk.service.UserBeanService;
 @Controller
 @RequestMapping(value="/")
 public class BackLoginController {
-	
+	   
 	@Autowired
 	private UserBeanService ubs;
 	
@@ -24,7 +24,7 @@ public class BackLoginController {
 
 	@RequestMapping(value="LoginController.do")
 	public String loginIn(String username, String pwd){
-		UserBean ub = ubs.loginIn(username, pwd);
+		UserBean ub =ubs.loginIn(username, pwd);
 		if(ub!=null){
 			return "redirect:houtai/index.jsp";
 		}else {
