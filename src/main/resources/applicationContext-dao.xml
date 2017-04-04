@@ -15,25 +15,8 @@
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 	">
-	<context:component-scan base-package="com.zrgk"/>
-	<context:annotation-config></context:annotation-config>
 	
-	<bean id="jdbcConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
-		<property name="location" value="classpath:jdbc.properties"></property>
-	</bean>
-	
-	 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="#{jdbcConfiguration.driver}"></property>
-		<property name="url" value="#{jdbcConfiguration.url}"></property>
-		<property name="username" value="#{jdbcConfiguration.username}"></property>
-		<property name="password" value="#{jdbcConfiguration.password}"></property>
-	</bean>
-	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
-	</bean>
-	
+	<!-- dao层对象 -->
 	<bean id="ubd" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface">
 			<value>com.zrgk.dao.UserBeanDao</value>
@@ -41,8 +24,7 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	</bean>
 	
-	<bean id="ubs" class="com.zrgk.service.impl.UserBeanServiceImpl">
-		<property name="ubd" ref="ubd"></property>
-	</bean>
+	
+	
 	
 </beans>
