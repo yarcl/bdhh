@@ -2,6 +2,7 @@ package com.zrgk.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +31,7 @@ public class BackLoginController {
 
 	@RequestMapping(value="LoginController.do")
 	public String loginIn(String username, String pwd, String imgCode, HttpServletRequest request, HttpServletResponse response){
+	
 		String code = (String)request.getSession().getAttribute("sysCode");
 		if(code.toUpperCase().equals(imgCode.toUpperCase())){
 			UserBean ub =ubs.loginIn(username, pwd);
@@ -43,7 +45,7 @@ public class BackLoginController {
 				response.setContentType("text/html; charset=utf-8"); 
 				PrintWriter out = response.getWriter();
 				
-				out.print("<script>alert('ÇëÊäÈëÕıÈ·µÄÑéÖ¤Âë£¡£¡£¡');location.href='houtai/login.jsp';</script>");
+				out.print("<script>alert('è¯·è¾“å…¥æ­£ç¡®çš„éªŒè¯ç ï¼ï¼');location.href='houtai/login.jsp';</script>");
 				out.flush();
 				out.close();
 			} catch (IOException e) {

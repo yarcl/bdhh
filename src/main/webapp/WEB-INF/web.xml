@@ -14,10 +14,20 @@
   		</init-param>
   		<load-on-startup>0</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>MyServlet</servlet-name>
+  	<display-name>MyServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlet.MyServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   		<servlet-name>controller</servlet-name>
   		<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MyServlet</servlet-name>
+  	<url-pattern>/MyServlet</url-pattern>
   </servlet-mapping>
   
  <!--  <filter>
