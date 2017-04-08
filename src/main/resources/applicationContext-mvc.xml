@@ -18,7 +18,10 @@
 	
 	<context:component-scan base-package="com.zrgk"/>
 	<context:annotation-config></context:annotation-config>
-	
+	<!-- 上传解析器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="102400"/>
+	</bean>
 	
 	
 	

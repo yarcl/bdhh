@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zrgk.dao.ProjectDao">
+
+
+	<insert id="regProject" parameterType="com.zrgk.entity.ProjectBean">
+		insert into pro_project values(projectSequence.nextVal,#{projectName},#{projectDesc}
+		,#{projectType},#{projectMoney},#{projectStart},#{projectEnd},#{myfiles},#{projectContent}
+		,#{addCompany},#{myfiles},#{myfiles},#{myfiles},#{addPhone}
+		,#{myfiles},#{myfiles},#{myfiles},#{addBank},#{addAccount}
+		,#{projectState}
+		)
+	</insert>
+</mapper>

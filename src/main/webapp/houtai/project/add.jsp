@@ -1,4 +1,6 @@
- <!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
  <html lang="zh-CN">
  <head>
    <meta charset="UTF-8">
@@ -18,24 +20,23 @@
         }); 
         
       }); 
+      
    </script>
    <title>Document</title>
  </head>
  <body>
   <div class="container">  
   	 <div id="button" class="mt10">
-       <input type="button" name="button" class="btn btn82 btn_add" onClick="location.href='add.html'" value="项目"> 
-       <input type="button" name="button" class="btn btn82 btn_add" onClick="location.href='return.html'" value="回报">  
+       <input type="button" name="button" class="btn btn82 btn_add" onClick="location.href='add.jsp'" value="项目"> 
+       <input type="button" name="button" class="btn btn82 btn_add" onClick="location.href='return.jsp'" value="回报">  
      </div>
      <div id="forms" class="mt10">
         <div class="box">
           <div class="box_border">
             <div class="box_top"><b class="pl15">项目添加</b></div>
             <div class="box_center">
-              <form action="javascript:location.href='list.html'" class="jqtransform">
+              <form method="post" action="../../RegisterProject.do" class="jqtransform" enctype="multipart/form-data">
                <table class="form_table pt15 pb15" width="100%" border="0" cellpadding="0" cellspacing="0">
-               	
-                
                 <tr>
                   <td class="td_left"><h3>项目信息：</h3></td>
                   <td class=""> 
@@ -48,13 +49,13 @@
                  <tr>
                   <td class="td_right">项目名称：</td>
                   <td class=""> 
-                    <input type="text" name="name" class="input-text lh30" size="40">
+                    <input type="text" name="projectName" class="input-text lh30" size="40">
                   </td>                 
                 </tr>
                 <tr>
                   <td class="td_right">项目简介：</td>
                   <td class="">
-                    <textarea name="" id="" cols="30" rows="10" class="textarea" style="resize:none;"></textarea>
+                    <textarea name="projectDesc" id="" cols="30" rows="10" class="textarea" style="resize:none;"></textarea>
                   </td>
                  </tr>
                  <tr>
@@ -63,9 +64,9 @@
                     <span class="fl">
                       <div class="select_border"> 
                         <div class="select_containers "> 
-                        <select name="" class="select"> 
-                        <option>演出</option> 
-                        <option>赛事</option> 
+                        <select name="projectType" class="select"> 
+                        <option value="1">演出</option> 
+                        <option value="2">赛事</option> 
                         </select> 
                         </div> 
                       </div> 
@@ -75,26 +76,26 @@
                  <tr>
                   <td class="td_right">呼唤金额：</td>
                   <td class=""> 
-                    <input type="text" name="name" class="input-text lh30" size="40">元
+                    <input type="text" name="projectMoney" class="input-text lh30" size="40">元
                   </td>                 
                 </tr>
                 
                 <tr>
                   <td class="td_right">筹资天数：</td>
                   <td class=""> 
-                    <input type="text" name="name" class="input-text lh30" size="15">~<input type="text" name="name" class="input-text lh30" size="15">
+                    <input type="text" name="projectStart" class="input-text lh30" size="15">~<input type="text" name="projectEnd" class="input-text lh30" size="15">
                   </td>                 
                 </tr>
                 
                 <tr>
                   <td class="td_right">H5顶部图片：</td>
-                  <td class=""><input type="file" name="file" class="input-text lh30" size="10"></td>
+                  <td class=""><input type="file" name="myfiles" class="input-text lh30" size="10"></td>
                  </tr>
                 
                 <tr>
                   <td class="td_right">项目详情：</td>
                   <td class="">
-                    <textarea name="" id="" cols="30" rows="10" class="textarea" style="resize:none;"></textarea>
+                    <textarea name="projectContent" id="" cols="30" rows="10" class="textarea" style="resize:none;"></textarea>
                   </td>
                  </tr>
                      
@@ -116,45 +117,45 @@
                     <tr>
                   	<td class="td_right">公司名称：</td>
                   	<td class=""> 
-                    <input type="text" name="name" class="input-text lh30" size="40">元
+                    <input type="text" name="addCompany" class="input-text lh30" size="40">元
                  	</td>                 
                 	</tr>
                     
                     <tr>
                   	<td class="td_right">企业营业执照副本扫描件：</td>
-                  	<td class=""><input type="file" name="file" class="input-text lh30" size="10"></td>
+                  	<td class=""><input type="file" name="myfiles" class="input-text lh30" size="10"></td>
                  	</tr>
                  
                  	<tr>
                   	<td class="td_right">法人身份证反面扫描件：</td>
-                  	<td class=""><input type="file" name="file" class="input-text lh30" size="10"></td>
+                  	<td class=""><input type="file" name="myfiles" class="input-text lh30" size="10"></td>
                  	</tr>
                  
                  	<tr>
                   	<td class="td_right">经办人身份证反面扫描件：</td>
-                  	<td class=""><input type="file" name="file" class="input-text lh30" size="10"></td>
+                  	<td class=""><input type="file" name="myfiles" class="input-text lh30" size="10"></td>
                  	</tr>
                     
                     <tr>
                   	<td class="td_right">经办人联系电话：</td>
                   	<td class=""> 
-                    <input type="text" name="name" class="input-text lh30" size="40">元
+                    <input type="text" name="addPhone" class="input-text lh30" size="40">元
                  	</td>                 
                 	</tr>
                     
                     <tr>
                   	<td class="td_right">组织机构代码证扫描件：</td>
-                  	<td class=""><input type="file" name="file" class="input-text lh30" size="10"></td>
+                  	<td class=""><input type="file" name="myfiles" class="input-text lh30" size="10"></td>
                  	</tr>
                  
                  	<tr>
                   	<td class="td_right">税务登记副本扫描件：</td>
-                  	<td class=""><input type="file" name="file" class="input-text lh30" size="10"></td>
+                  	<td class=""><input type="file" name="myfiles" class="input-text lh30" size="10"></td>
                  	</tr>
                  
                  	<tr>
                   	<td class="td_right">银行结算账户开户许可证扫描件：</td>
-                  	<td class=""><input type="file" name="file" class="input-text lh30" size="10"></td>
+                  	<td class=""><input type="file" name="myfiles" class="input-text lh30" size="10"></td>
                  	</tr>
                     
                     <tr>
@@ -163,9 +164,9 @@
                     	<span class="fl">
                       	<div class="select_border"> 
                         <div class="select_containers "> 
-                        	<select name="" class="select"> 
-                        		<option>中国农业银行</option> 
-                        		<option>中国工商银行</option> 
+                        	<select name="addBank" class="select"> 
+                        		<option value="1">中国农业银行</option> 
+                        		<option value="2">中国工商银行</option> 
                         	</select> 
                         </div> 
                       	</div> 
@@ -176,15 +177,15 @@
                     <tr>
                   	<td class="td_right">银行对公账号：</td>
                   	<td class=""> 
-                    <input type="text" name="name" class="input-text lh30" size="40">元
+                    <input type="text" name="addAccount" class="input-text lh30" size="40">元
                  	</td>                 
                 	</tr>
                     
                  <tr>
                    <td class="td_right">&nbsp;</td>
                    <td class="">
-                     <input type="button" name="button" class="btn btn82 btn_save2" onClick="javascript:location.href='return.html'" value="下一步" /> 
-                    <input type="button" name="button" class="btn btn82 btn_res" value="返回" onclick="history.back();" /> 
+                     <input type="submit"  class="btn btn82 btn_save2"  value="下一步" /> 
+                    <input type="button"  class="btn btn82 btn_res" value="返回" onclick="history.back();" /> 
                    </td>
                  </tr>
                </table>
@@ -196,4 +197,3 @@
    </div> 
  </body>
  </html>
-  

@@ -23,6 +23,12 @@
 		</property>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	</bean>
+	<bean id="pd" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface">
+			<value>com.zrgk.dao.ProjectDao</value>
+		</property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
 	
 	
 	

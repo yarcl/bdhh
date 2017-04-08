@@ -95,7 +95,7 @@ function menuScroll(num){
         <div class="sideMenu" style="margin:0 auto">
           <h3>项目管理</h3>
           <ul>
-            <li><a href="project/add.html" target="right">项目创建</a></li>
+            <li><a href="project/add.jsp" target="right">项目创建</a></li>
             <li><a href="project/list.html" target="right">进行中项目</a></li>
             <li><a href="project/listFail.html" target="right">失败项目</a></li>
             <li><a href="project/listSuccess.html" target="right">满标项目</a></li>

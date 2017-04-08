@@ -20,4 +20,8 @@
 		<property name="ubd" ref="ubd"></property>
 	</bean>
 	
+	<bean id="projectService" class="com.zrgk.service.impl.ProjectServiceImpl">
+		<property name="pd" ref="pd"></property>
+	</bean>
+	
 </beans>
